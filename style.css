@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+}
+#page-wrap {
+  display: flex;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  justify-content: flex-start;
+}
+fieldset {
+  height: 300px;
+}
+h1 {
+  color: white;
+}
+span {
+  color: rgb(56, 128, 156);
+}
+#step_1 {
+  background-color: chartreuse;
+  height: 100px;
+  transition: 1s;
+}
+
+#step_2 {
+  background-color: rgba(0, 204, 255, 0.904);
+  height: 300px;
+}
+#step_3 {
+  background-color: burlywood;
+  height: 100px;
+}
+
+legend {
+  border-radius: 15px;
+  background-color: white;
+  padding: 10px;
+}
+#attendee_container > div {
+  display: none;
+  transition: all 2s linear;
+}
+
+#company_name_wrap,
+#special_accommodations_wrap {
+  display: none;
+}

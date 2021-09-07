@@ -1,0 +1,18 @@
+QUESTIONS
+
+1. Which browser and which tools do you usually use to develop? (Operating system, browser, various tools).
+Browser: Google Chrome
+Operating System : MacOS
+Code Editor: VS Code
+
+2. How do you optimize assets? (CSS, Js, Images).
+    
+3. Why a website usually serves assets from different domains?
+
+4. Which new technology would you like to learn during this year?
+
+5. Write 3 methods to reduce the page’s load time.
+
+6. Do you use any CSS preprocessor? If yes, describe what do you like about preprocessors and what you don’t.
+
+7. How do you include a non standard font in a website?
