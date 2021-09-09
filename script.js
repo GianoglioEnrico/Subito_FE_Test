@@ -1,50 +1,48 @@
 // STEP 1
+
 const select = document.getElementById("num_attendees");
 const step1 = document.getElementById("step_1");
 const attendee = document.getElementById("attendee_container");
-let attendeesInput = [];
 const step1Result = document.getElementById("step1_result");
-
+let attendeesInput = [];
 const doneIcon = `<i class="fa fa-check-circle" id="done-icon"></i>`;
 let hei = "60px";
 step1.style.height = "100px";
 
 select.addEventListener("change", (e) => {
   step1.style.height = "100px";
-
+  attendeesInput = [];
   if (e.target.value !== "0") {
-    for (let i = 0; i < attendee.children.length - 1; i++) {
+    for (let i = 0; i < attendee.children.length; i++) {
       if (i < e.target.value) {
         step1.style.height =
           parseInt(step1.style.height) + parseInt(hei) + "px";
-        // attendee.style.height =
-        //   parseInt(attendee.style.height) + parseInt(hei) + "px";
+
         attendee.children[i].style.visibility = "visible";
         attendeesInput.push(attendee.children[i].children[1]);
 
         attendee.children[i].children[1].addEventListener("keyup", () => {
           let fil = attendeesInput.filter((at) => at.value !== "");
-
+          console.log(fil, attendeesInput);
           if (fil.length === attendeesInput.length) {
-            // Check on input OK
+            // If all visible input fields are filled show green check
             step2.disabled = false;
             step2.style.opacity = 1;
             step1Result.innerHTML = doneIcon;
-            step1.style.height = attendee.style.height;
+            step1.style.height = "500px";
             step1Result.style.visibility = "visible";
             step1Result.style.top = "90%";
             step1.style.overflow = "visible";
           } else {
+            step1.style.height = 100 + attendeesInput.length * 60 + "px";
             step2.style.opacity = 0.6;
             step2.disabled = true;
             step1Result.style.visibility = "hidden";
             step1Result.style.top = 0;
-            // step1.style.height = attendee.style.height;
           }
         });
       } else {
         attendee.children[i].style.visibility = "hidden";
-        // attendee.children[i].children[1].value = "";
       }
     }
   } else {
@@ -53,7 +51,6 @@ select.addEventListener("change", (e) => {
     attendeesInput = [];
     for (let i = 0; i < attendee.children.length; i++) {
       if (attendee.children[i].children[1]) {
-        console.log(attendee.children[i].children[1].value);
         attendee.children[i].children[1].value = "";
         attendee.children[i].style.visibility = "hidden";
       }
@@ -93,10 +90,8 @@ companyNameCheckBox.forEach((companyName) => {
       // companyNameWrap.style.display = "flex";
       companyNameWrap.style.visibility = "visible";
       companyNameWrap.style.height = "30px";
-
-      console.log(companyNameWrap.style.height);
     } else {
-      companyNameWrap.style.visibility = "hidden";
+      // companyNameWrap.style.visibility = "hidden";
       companyNameWrap.style.height = 0;
     }
   });
@@ -155,7 +150,6 @@ form.addEventListener("submit", (e) => {
   step2.style.height = "230px";
   select.value = "0";
   for (let i = 0; i < attendeesInput.length; i++) {
-    console.log(attendeesInput);
     attendeesInput[i].value = "";
   }
   companyNameCheckBox.forEach((companyName) => {
@@ -167,7 +161,8 @@ form.addEventListener("submit", (e) => {
     specialAccomodationWrap.style.display = "none";
   });
   step1Result.style.visibility = "hidden";
-  document.querySelector("#step2_result").remove();
+  h1.style.top = 0;
+  h1.style.visibility = "hidden";
   companyNameIsChecked = false;
   specialAccomodationsIsChecked = false;
   step1.style.overflow = "hidden";
