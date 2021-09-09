@@ -28,12 +28,7 @@ export function handleStep3Checkbox() {
   }
 }
 
-export function resetAll(
-  event,
-  step2Result,
-  companyNameIsChecked,
-  specialAccomodationsIsChecked
-) {
+export function resetAll(event, step2Result) {
   event.preventDefault();
   step3.disabled = true;
   submitButton.disabled = true;
@@ -67,8 +62,6 @@ export function resetAll(
 
   step1Result.style.top = 0;
   step2Result.style.visibility = "hidden";
-  companyNameIsChecked = false;
-  specialAccomodationsIsChecked = false;
   step1.style.overflow = "hidden";
   step2.disabled = true;
   step2.style.opacity = 0.6;

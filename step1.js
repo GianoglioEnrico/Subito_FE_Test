@@ -12,6 +12,7 @@ export function handleChangeSelect(e) {
   attendeesInput = [];
   step1Result.style.visibility = "hidden";
   step1Result.style.top = 0;
+
   // If the selected element is not the default value ("0")
   if (e.target.value !== "0") {
     attendee.style.visibility = "visible";
@@ -27,7 +28,7 @@ export function handleChangeSelect(e) {
           let filledInputs = attendeesInput.filter(
             (attendee) => attendee.value !== ""
           );
-          console.log(filledInputs, attendeesInput);
+
           // If all visible input fields are filled show green check
           if (filledInputs.length === attendeesInput.length) {
             step2.disabled = false;
