@@ -5,6 +5,8 @@ html {
   height: 100%;
 }
 body {
+  margin: 0;
+  padding: 0;
   background-color: #000000;
   background-image: linear-gradient(315deg, #141313 0%, #3c4344 74%);
   display: flex;
@@ -13,6 +15,7 @@ body {
 #page-wrap {
   display: flex;
   flex-direction: column;
+  margin: 5px;
 }
 form {
   display: flex;
@@ -41,13 +44,12 @@ span {
 #step_2 {
   background-color: rgb(143, 219, 238);
   opacity: 0.6;
-  /* height: 200px; */
   position: relative;
   transition: height 1s;
 }
 #step_3 {
   background-color: burlywood;
-  height: 100px;
+  height: 120px;
   opacity: 0.6;
 }
 
@@ -61,10 +63,6 @@ legend {
 }
 #attendee_container {
   visibility: hidden;
-
-  /* overflow: hidden;
-  height: 0;
-  transition: height 1s; */
 }
 #attendee_container > div {
   margin: 5px;
@@ -123,18 +121,18 @@ h3 {
 #num_attendees {
   margin-bottom: 10px;
 }
-#company_name_wrap {
+#company_name_wrap,
+#special_accommodations_wrap {
   /* visibility: hidden; */
   transition: height 1s;
 
   overflow: hidden;
 }
 
-#special_accommodations_wrap {
-  overflow: hidden;
-  transition: height 1s;
-}
-
 #attendee_container div label {
   font-style: italic;
+}
+
+.visible_element {
+  display: block;
 }
