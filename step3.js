@@ -28,8 +28,10 @@ export function handleStep3Checkbox() {
   }
 }
 
-export function resetAll(event, step2Result) {
-  event.preventDefault();
+export function resetAll(step2Result) {
+  companyNameWrap.children[1].value = "";
+
+  specialAccomodationWrap.children[1].value = "";
   step3.disabled = true;
   submitButton.disabled = true;
   step3CheckBox.checked = false;
@@ -41,21 +43,16 @@ export function resetAll(event, step2Result) {
   companyNameWrap.style.height = 0;
   specialAccomodationWrap.style.height = 0;
   select.value = "0";
-  for (let i = 0; i < attendee.children.length - 1; i++) {
+  for (let i = 1; i < attendee.children.length - 1; i++) {
     attendee.children[i].children[1].value = "";
-    console.log();
     attendee.children[i].style.visibility = "hidden";
   }
 
   companyNameCheckBox.forEach((companyName) => {
     companyName.checked = false;
-
-    // companyNameWrap.style.display = "none";
   });
   specialAccomodationsCheckBox.forEach((accomodation) => {
     accomodation.checked = false;
-
-    // specialAccomodationWrap.style.display = "none";
   });
   step1Result.style.visibility = "hidden";
   step2Result.style.top = 0;

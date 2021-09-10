@@ -114,9 +114,6 @@ select {
 p {
   font-family: "Times New Roman", Times, serif;
 }
-h3 {
-  display: none;
-}
 
 #num_attendees {
   margin-bottom: 10px;

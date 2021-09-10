@@ -4,7 +4,7 @@ const step1Result = document.getElementById("step1_result");
 let attendeesInput = [];
 const doneIcon = `<i class="fa fa-check-circle" id="done-icon"></i>`;
 let step2 = document.getElementById("step_2");
-let attendeeInputHeight = "60px";
+let attendeeInputHeight = "80px";
 
 step1.style.height = "120px";
 
@@ -17,13 +17,13 @@ export function handleChangeSelect(e) {
   if (e.target.value !== "0") {
     attendee.style.visibility = "visible";
     step1.style.height = "120px";
-    for (let i = 0; i < attendee.children.length - 1; i++) {
-      if (i < e.target.value) {
+    for (let i = 1; i < attendee.children.length - 1; i++) {
+      if (i <= e.target.value) {
         step1.style.height =
           parseInt(step1.style.height) + parseInt(attendeeInputHeight) + "px";
         attendee.children[i].style.visibility = "visible";
         attendeesInput.push(attendee.children[i].children[1]);
-        // On Attendee input event
+        // Attendee input event
         attendee.children[i].children[1].addEventListener("keyup", () => {
           let filledInputs = attendeesInput.filter(
             (attendee) => attendee.value !== ""
@@ -36,11 +36,11 @@ export function handleChangeSelect(e) {
             step1Result.innerHTML = doneIcon;
             step1Result.style.visibility = "visible";
             step1Result.style.top = "90%";
-            step1.style.height = "500px";
+            step1.style.height = "600px";
           }
-          // if not all visible attendee inputs are filled with textx
+          // if not all visible attendee inputs are filled
           else {
-            step1.style.height = 120 + attendeesInput.length * 60 + "px";
+            step1.style.height = 120 + attendeesInput.length * 80 + "px";
             step2.style.opacity = 0.6;
             step2.disabled = true;
             step1Result.style.visibility = "hidden";

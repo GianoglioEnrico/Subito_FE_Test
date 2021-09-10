@@ -28,5 +28,5 @@ const form = document.querySelector("form");
 step3CheckBox.addEventListener("change", handleStep3Checkbox);
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  resetAll(event, step2Result);
+  resetAll(step2Result);
 });

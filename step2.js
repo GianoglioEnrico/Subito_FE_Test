@@ -12,6 +12,7 @@ step2.style.height = "260px";
 
 specialAccomodationWrap.style.height = 0;
 let areAllChecked = [false, false];
+
 export function handleStep2CheckBoxes(event, step2Result) {
   areAllChecked = [false, false];
   document
@@ -39,7 +40,7 @@ export function handleStep2CheckBoxes(event, step2Result) {
       companyNameWrap.style.height = 0;
     }
     // handleAllCheckBoxes(companyName.checked, accomodation.checked);
-  } else {
+  } else if (event.target.name === "special_accommodations_toggle") {
     if (event.target.id === "special_accommodations_toggle_on") {
       specialAccomodationWrap.style.display = "flex";
       specialAccomodationWrap.style.visibility = "visible";
@@ -55,9 +56,9 @@ export function handleStep2CheckBoxes(event, step2Result) {
     step3.disabled = false;
     step3.style.opacity = 1;
     step2Result.style.visibility = "visible";
-    console.log(step2Result);
+
     step2Result.style.top = "85%";
-    step2.style.height = "500px";
+    step2.style.height = "600px";
   } else {
     step3.disabled = true;
     step3.style.opacity = 0.6;
