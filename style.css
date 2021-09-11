@@ -15,6 +15,14 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  #page-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+
+    text-align: center;
+  }
   form {
     flex-wrap: wrap;
   }
@@ -46,7 +54,7 @@ form {
 fieldset {
   border: none;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
-  margin: 5px;
+  margin: 10px;
 }
 #step_1 {
   background-color: rgba(154, 224, 152, 0.678);
@@ -114,9 +122,7 @@ legend {
 }
 
 #step2_result {
-  /* text-align: center; */
   height: 20px;
-
   position: absolute;
   top: 0;
   left: 50%;
