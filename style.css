@@ -127,6 +127,7 @@ legend {
 select {
   border-radius: 5px;
   padding: 5px;
+  margin: 10px;
 }
 p {
   font-family: "Times New Roman", Times, serif;
@@ -143,4 +144,7 @@ p {
 .step1_result_ok {
   visibility: visible;
   top: 90%;
+}
+#submit_button {
+  margin: 10px;
 }
