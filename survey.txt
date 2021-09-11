@@ -1,21 +1,38 @@
 QUESTIONS
 
 1. Which browser and which tools do you usually use to develop? (Operating system, browser, various tools).
-- Browser: Google Chrome
+- Browser: Google Chrome, Mozilla FireFox
 - Operating System : MacOS
 - Code Editor: VS Code
 - Api Testing: POSTMAN
 
 2. How do you optimize assets? (CSS, Js, Images).
+I use tools like: CSS Minifier and JSCompress.
+When using React, your code gets automatically minified by webpack when you create a production build.
     
 3. Why a website usually serves assets from different domains?
 It's because browsers usually have limits on the number of concurrent downloads from a domain at a moment. 
 4. Which new technology would you like to learn during this year?
-I would learn the Microsoft stack, specifically ASP.NET CORE
+I would learn the Microsoft stack, specifically ASP.NET CORE and C#
 5. Write 3 methods to reduce the page’s load time.
 
+1) Minify CSS, JavaScript, and HTML.
+2) Cache your web pages.
+3) Lazy Loading
+4) Leverage a content delivery network (CDN).
+
+
 6. Do you use any CSS preprocessor? If yes, describe what do you like about preprocessors and what you don’t.
-Yes I use SASS. 
+I used SASS quite a lot in the past.
+PROS:
+- Create reusable code snippets that can be imported
+- Makes code more organized, clean and helps avoid repetitions
+
+CONS:
+- Compilation takes longer time
+- They can produce very large CSS files
+
+
 7. How do you include a non standard font in a website?
 Inside our .css file we can import non standard font like this:
 ```css

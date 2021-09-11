@@ -7,4 +7,4 @@
 3. Rules:
    a. You are free to use every library or framework you want to use
 
-<!-- ![image](https://github.com/GianoglioEnrico/Pirelli-Technical-Challenge/blob/main/web-app-image.png) -->
+![image](https://github.com/GianoglioEnrico/Subito_FE_Test/blob/main/app-image.png)
