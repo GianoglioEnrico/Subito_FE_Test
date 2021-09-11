@@ -15,8 +15,9 @@ let step2Result = document.createElement("div");
 step2Result.setAttribute("id", "step2_result");
 const doneIcon = `<i class="fa fa-check-circle" id="done-icon"></i>`;
 step2Result.innerHTML = doneIcon;
+step2Result.style.visibility = "hidden";
 step2.appendChild(step2Result);
-// STEP 2 Event Listener Fired when you check checkboxes
+// STEP 2 Events Listener Fired when checkboxes are checked
 step2.addEventListener("change", (event) =>
   handleStep2CheckBoxes(event, step2Result)
 );
@@ -24,8 +25,10 @@ step2.addEventListener("change", (event) =>
 // STEP 3
 const step3CheckBox = document.getElementById("rock");
 const form = document.querySelector("form");
-// Step3 Event Listener Fired when form gets submitted
+// Step3 Events Listener Fired:
+// when checkbox is checked
 step3CheckBox.addEventListener("change", handleStep3Checkbox);
+// when form gets submitted
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   resetAll(step2Result);

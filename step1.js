@@ -1,26 +1,26 @@
-const step1 = document.getElementById("step_1");
+// const step1 = document.getElementById("step_1");
 const attendee = document.getElementById("attendee_container");
 const step1Result = document.getElementById("step1_result");
 let attendeesInput = [];
 const doneIcon = `<i class="fa fa-check-circle" id="done-icon"></i>`;
 let step2 = document.getElementById("step_2");
-let attendeeInputHeight = "80px";
 
-step1.style.height = "120px";
+let step1Height;
 
+attendee.style.height = 0;
 export function handleChangeSelect(e) {
   attendeesInput = [];
   step1Result.style.visibility = "hidden";
   step1Result.style.top = 0;
+  step1Height = "120px";
 
   // If the selected element is not the default value ("0")
   if (e.target.value !== "0") {
-    attendee.style.visibility = "visible";
-    step1.style.height = "120px";
     for (let i = 1; i < attendee.children.length - 1; i++) {
       if (i <= e.target.value) {
-        step1.style.height =
-          parseInt(step1.style.height) + parseInt(attendeeInputHeight) + "px";
+        step1Height = 120 + 80 * e.target.value + "px";
+        attendee.style.height = step1Height;
+
         attendee.children[i].style.visibility = "visible";
         attendeesInput.push(attendee.children[i].children[1]);
         // Attendee input event
@@ -36,11 +36,11 @@ export function handleChangeSelect(e) {
             step1Result.innerHTML = doneIcon;
             step1Result.style.visibility = "visible";
             step1Result.style.top = "90%";
-            step1.style.height = "600px";
+            step1Height = "500px";
           }
           // if not all visible attendee inputs are filled
           else {
-            step1.style.height = 120 + attendeesInput.length * 80 + "px";
+            step1Height = 120 + attendeesInput.length * 80 + "px";
             step2.style.opacity = 0.6;
             step2.disabled = true;
             step1Result.style.visibility = "hidden";
@@ -54,7 +54,7 @@ export function handleChangeSelect(e) {
   }
   // When you select the defaul element of the select ("0")
   else {
-    step1.style.height = "120px";
+    attendee.style.height = 0;
     attendeesInput = [];
     for (let i = 0; i < attendee.children.length; i++) {
       if (attendee.children[i].children[1]) {
@@ -62,7 +62,6 @@ export function handleChangeSelect(e) {
         attendee.children[i].style.visibility = "hidden";
       }
       attendee.children[i].value = "";
-      step1Result.innerHTML = "";
     }
   }
 }
